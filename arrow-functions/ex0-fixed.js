@@ -1,4 +1,4 @@
-(function IIFE(){
+(() => {
 
     function foo(x) {
         var y = x * 2;
