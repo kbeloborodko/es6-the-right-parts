@@ -13,10 +13,10 @@
             else {
                 var obj = [];
 
-                setTimeout( function bam(){
+                setTimeout( bam = () => {
                     obj.length = 1;
                     obj[0] = this.w;
-                }.bind( this ), 100 );
+                }, 100 );
 
                 return obj;
             }
@@ -30,8 +30,8 @@
     list1 = p.call( { w: 42 }, list1 );
     list2 = p( list2 );
 
-    setTimeout( function(){
-        console.log( list1[0] === list2.reduce( function(s,v){
+    setTimeout( () => {
+        console.log( list1[0] === list2.reduce( (s,v) => {
                 return s + v;
             }, 0 ) );
     }, 200 );
