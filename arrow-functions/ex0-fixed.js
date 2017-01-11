@@ -1,11 +1,11 @@
 (() => {
 
-    function foo(x) {
+    var foo = (x) => {
         var y = x * 2;
 
         return function bar(z) {
             if (z.length > 3) {
-                return z.map( function baz(v){
+                return z.map( baz = (v) => {
                     if (v > 3) return v + y;
                     else return baz( v * 4 );
                 } );
