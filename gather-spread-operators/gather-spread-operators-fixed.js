@@ -1,5 +1,5 @@
-function foo() {
-
+function foo(x, y, z, ...args) {
+  return [x, ...args];
 }
 
 function bar() {
