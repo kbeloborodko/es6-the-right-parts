@@ -31,15 +31,25 @@ var defaults = {
   }
 };
 
-function response({foo, baz, bam}) {
+function response({
+
+  foo = defaults.foo,
+  bar = defaults.bar,
+  baz,
+  bam: {
+    qux = defaults.bam.qux,
+    qam = defaults.bam.qam
+  } = {}
+
+} = {}) {
 
   check({
-    foo: foo,
-    baz: baz,
-    bar: defaults.bar,
+    foo,
+    bar,
+    baz,
     bam: {
-      qux: bam.qux,
-      qam: defaults.bam.qam
+      qux,
+      qam
     }
   });
 
