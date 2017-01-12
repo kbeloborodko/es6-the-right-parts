@@ -10,6 +10,7 @@ function ajax(url,cb) {
 }
 
 function check(data) {
+  console.log(data.foo, data.bar, data.baz[0], data.baz[1], data.baz[2], data.bam.qux, data.bam.qam);
   console.log(
     56 === (
       data.foo +
@@ -30,10 +31,16 @@ var defaults = {
   }
 };
 
-function response() {
+function response({foo, baz, bam}) {
 
   check({
-
+    foo: foo,
+    baz: baz,
+    bar: defaults.bar,
+    bam: {
+      qux: bam.qux,
+      qam: defaults.bam.qam
+    }
   });
 
 }
